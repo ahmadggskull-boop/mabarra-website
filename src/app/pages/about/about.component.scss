@@ -1,0 +1,128 @@
+// Use the main theme colors
+$primary-color: #003366;
+$secondary-color: #005a9e;
+$light-bg: #f8f9fa;
+$text-color: #333;
+
+.about-page {
+  .about-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/heritage-art.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #e0e0e0;
+    }
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .content-body {
+    section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      // Reverse layout for even sections
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .text-content {
+        flex: 1;
+        h2 {
+          color: $primary-color;
+          font-size: 2.2rem;
+          margin-bottom: 1rem;
+          border-right: 4px solid $secondary-color;
+          padding-right: 1rem;
+        }
+        p {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: $text-color;
+        }
+      }
+
+      .image-content {
+        flex: 1;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    .services-section {
+      display: block; // This section will not be a flexbox row
+      text-align: center;
+      background-color: $light-bg;
+      padding: 3rem;
+      border-radius: 10px;
+
+      h2 {
+        border: none;
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+      p {
+        margin-bottom: 2rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        text-align: right;
+        li {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 1.05rem;
+
+          i {
+            color: $secondary-color;
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments for mobile
+  @media (max-width: 768px) {
+    .content-body section {
+      flex-direction: column !important; // Stack text and image on mobile
+      gap: 2rem;
+    }
+  }
+}

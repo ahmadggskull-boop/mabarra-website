@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  height: 70vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 20, 50, 0.6);
+  }
+}
+
+// Styling for the new navigation bar with icons
+.quick-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background-color: #f0f8ff;
+  border-bottom: 3px solid #005a9e;
+
+  a {
+    // New styles for centering icon and text vertically
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; // Space between icon and text
+
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #003366;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-left: 1px solid #d4e8f7;
+    transition: background-color 0.3s;
+
+    &:first-child {
+      border-right: 1px solid #d4e8f7;
+    }
+
+    &:hover {
+      background-color: #e0f3ff;
+      color: #005a9e;
+    }
+
+    // Icon styling
+    i {
+      font-size: 2rem; // Make the icon larger
+      color: #005a9e;
+    }
+  }
+}
+
+// Styling for the content sections
+.content-section {
+  padding: 5rem 2rem;
+  text-align: center;
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+
+    h2 {
+      color: #003366;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+  }
+}
+// Add this at the end of the file
+.map-container {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #005a9e;
+  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1);
+}
+// Add these styles to the end of home.component.scss
+#faq .container {
+  text-align: right;
+  .faq-item {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-right: 4px solid #005a9e;
+    h4 {
+      margin: 0 0 0.5rem 0;
+      color: #003366;
+      font-size: 1.3rem;
+    }
+    p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+  }
+}

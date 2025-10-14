@@ -1,0 +1,36 @@
+<header class="header">
+  <nav class="desktop-nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">الرئيسية</a>
+    <a routerLink="/about" routerLinkActive="active">نبذة عن المبرة</a>
+    <a routerLink="/vision" routerLinkActive="active">الرؤيا والرسالة</a>
+    <a routerLink="/goals" routerLinkActive="active">الأهداف</a>
+    <a routerLink="/brochure" routerLinkActive="active">بروشور المبرة</a>
+  </nav>
+
+  <div class="logo">
+    <img src="assets/images/logo.jpeg" alt="شعار المبرة" />
+    <h1>مبرة الملك حسين الخيرية</h1>
+  </div>
+
+  <button class="hamburger-menu" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+</header>
+
+<div class="mobile-sidenav" [class.is-open]="isMenuOpen">
+  <div class="sidenav-header">
+    <h3>القائمة</h3>
+    <button class="close-btn" (click)="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <nav class="sidenav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleMenu()">الرئيسية</a>
+    <a routerLink="/about" routerLinkActive="active" (click)="toggleMenu()">نبذة ageahعن المبرة</a>
+    <a routerLink="/vision" routerLinkActive="active" (click)="toggleMenu()">الرؤيا والرسالة</a>
+    <a routerLink="/goals" routerLinkActive="active" (click)="toggleMenu()">الأهداف</a>
+    <a routerLink="/brochure" routerLinkActive="active" (click)="toggleMenu()">بروشور المبرة</a>
+  </nav>
+</div>
+
+<div class="overlay" [class.is-open]="isMenuOpen" (click)="toggleMenu()"></div>
